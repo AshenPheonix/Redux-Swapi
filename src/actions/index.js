@@ -12,6 +12,7 @@ export const FAILURE="FAILURE"
 // remember that now we have controll over our thunk-based action creator
 
 export const getPeople = () =>dispatch=>{
+    dispatch({type:FETCH})
     const request=axios.get('https://swapi.co/api/people')
     request.then(({data})=>{
         dispatch({type:SUCCESS,payload:data.results})
